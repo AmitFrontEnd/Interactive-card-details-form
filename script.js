@@ -108,3 +108,29 @@ nameInput.addEventListener('input', () => {
     }
     validateForm();
 });
+
+// Updating card number, month, year, and CVC display fields
+numberInput.addEventListener('input', () => {
+    cardNumber.textContent = numberInput.value;
+    validateForm();
+});
+
+month.addEventListener('input', () => {
+    date.textContent = month.value;
+    validateForm();
+});
+
+year.addEventListener('input', () => {
+    ryear.textContent = year.value;
+    validateForm();
+});
+
+cvc.addEventListener('input', () => {
+    cvv.textContent = cvc.value;
+    validateForm();
+});
+
+nameInput.addEventListener('input', () => {
+    ownerName.textContent = nameInput.value;
+    validateForm();
+});
