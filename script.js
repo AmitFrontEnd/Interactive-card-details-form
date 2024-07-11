@@ -51,4 +51,57 @@ numberInput.addEventListener('keyup', () => {
         numberInput.classList.add('border-red')
     }
     validateForm();
-});  ensure that except name field no one filed can accept string
+});
+
+month.addEventListener('keyup', () => {
+    if (month.value === '') {
+        error2.style.display = 'block';
+        month.classList.add('border-red');
+    } else {
+        error2.style.display = 'none';
+        month.classList.remove('border-red');
+        date.innerText = month.value;
+    }
+    validateForm();
+});
+
+year.addEventListener('keyup', () => {
+    if (year.value === '') {
+        error2.style.display = 'block';
+        year.classList.add('border-red');
+    } else {
+        error2.style.display = 'none';
+        year.classList.remove('border-red');
+        ryear.innerText = year.value;
+    }
+    validateForm();
+});
+
+cvc.addEventListener('keyup', () => {
+    if (cvc.value === '') {
+        error1.style.display = 'block';
+        cvc.classList.add('border-red');
+    } else {
+        error1.style.display = 'none';
+        cvc.classList.remove('border-red');
+        cvv.innerText = cvc.value;
+    }
+    validateForm();
+});
+
+nameInput.addEventListener('input', () => {
+    nameText.innerText = nameInput.value;
+    validateForm();
+});
+
+subBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!subBtn.disabled) {
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+    }
+});
+
+// Initial validation check
+validateForm();
+
