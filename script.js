@@ -36,7 +36,7 @@ const validateForm = () => {
     subBtn.disabled = !(isNumberValid && isMonthValid && isYearValid && isCVCValid && isNameValid);
 }
 
-numberInput.addEventListener('keyup', () => {
+numberInput.addEventListener('input', () => {
     if (numberInput.value.match(/^[0-9 ]*$/)) {
         let cleanedValue = numberInput.value.replace(/\s+/g, '');
 
@@ -53,40 +53,43 @@ numberInput.addEventListener('keyup', () => {
     validateForm();
 });
 
-month.addEventListener('keyup', () => {
+month.addEventListener('input', () => {
     if (month.value.match(/^[0-9]{1,2}$/) && month.value <= 12) {
         month.classList.remove('border-red');
         month.nextElementSibling.style.display = 'none';
     } else {
+        month.value = month.value.replace(/[^0-9]/g, '');
         month.nextElementSibling.style.display = 'block';
         month.classList.add('border-red');
     }
     validateForm();
 });
 
-year.addEventListener('keyup', () => {
+year.addEventListener('input', () => {
     if (year.value.match(/^[0-9]{2}$/)) {
         year.classList.remove('border-red');
         year.nextElementSibling.style.display = 'none';
     } else {
+        year.value = year.value.replace(/[^0-9]/g, '');
         year.nextElementSibling.style.display = 'block';
         year.classList.add('border-red');
     }
     validateForm();
 });
 
-cvc.addEventListener('keyup', () => {
+cvc.addEventListener('input', () => {
     if (cvc.value.match(/^[0-9]{3}$/)) {
         cvc.classList.remove('border-red');
         cvc.nextElementSibling.style.display = 'none';
     } else {
+        cvc.value = cvc.value.replace(/[^0-9]/g, '');
         cvc.nextElementSibling.style.display = 'block';
         cvc.classList.add('border-red');
     }
     validateForm();
 });
 
-nameInput.addEventListener('keyup', () => {
+nameInput.addEventListener('input', () => {
     if (nameInput.value !== '') {
         nameInput.classList.remove('border-red');
         nameInput.nextElementSibling.style.display = 'none';
