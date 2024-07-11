@@ -6,15 +6,15 @@ let year = document.querySelector('.year');
 let cvc = document.querySelector('.cvc');
 let cardNumber = document.querySelector('.c-number');
 let ownerName = document.querySelector('.name');
-let error1 = document.querySelector('.er1');
-let error2 = document.querySelector('.er2');
-let date = document.querySelector('.date');
-let ryear = document.querySelector('.ryear');
-let cvv = document.querySelector('.cvv');
-let nameText = document.querySelector('.name');
-let form = document.querySelector('form');
-let thankYou = document.querySelector('.second');
-let subBtn = document.querySelector('.submit');
+let error1=document.querySelector('.er1')
+let error2=document.querySelector('.er2')
+let date=document.querySelector('.date')
+let ryear=document.querySelector('.ryear')
+let cvv=document.querySelector('.cvv')
+let nameText=document.querySelector('.name')
+let form=document.querySelector('form')
+let thankYou=document.querySelector('.second')
+let subBtn=document.querySelector('.submit')
 
 const validateForm = () => {
     // Check number input
@@ -51,4 +51,4 @@ numberInput.addEventListener('keyup', () => {
         numberInput.classList.add('border-red')
     }
     validateForm();
-});
+});  ensure that except name field no one filed can accept string
